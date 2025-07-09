@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import { ThemeSelector } from "@/components/ui/theme-selector";
 
 function FloatingPaths({ position }: { position: number }) {
@@ -76,7 +77,7 @@ export function BackgroundPaths({
                     transition={{ duration: 2 }}
                     className="text-center max-w-5xl"
                 >
-                    <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-8 tracking-tighter">
+                    <h1 className="text-7xl sm:text-9xl md:text-10xl font-bold mb-12 tracking-tighter">
                         {words.map((word, wordIndex) => (
                             <span
                                 key={wordIndex}
@@ -96,7 +97,7 @@ export function BackgroundPaths({
                                             damping: 25,
                                         }}
                                         className="inline-block text-transparent bg-clip-text 
-                                        bg-gradient-to-r from-neutral-900 to-neutral-700/80 
+                                        bg-linear-to-r from-neutral-900 to-neutral-700/80 
                                         dark:from-white dark:to-white/80"
                                     >
                                         {letter}
@@ -106,22 +107,47 @@ export function BackgroundPaths({
                         ))}
                     </h1>
 
-                    {/* Coming Soon Subtitle */}
+                    {/* Tagline */}
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 1, duration: 1 }}
-                        className="text-xl sm:text-2xl md:text-3xl font-medium mb-12 text-neutral-600 dark:text-neutral-400"
+                        className="text-xl sm:text-2xl md:text-3xl font-light text-neutral-600 dark:text-neutral-400"
+                        style={{ marginBottom: '4rem', marginTop: '2rem' }}
                     >
-                        Coming Soon
+                        Academic Search Finally Simplified
                     </motion.p>
 
-                    <div
-                        className="inline-block group relative bg-gradient-to-b from-black/10 to-white/10 
-                        dark:from-white/10 dark:to-black/10 p-px rounded-2xl backdrop-blur-lg 
-                        overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    {/* Action Buttons */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1.5, duration: 1 }}
+                        className="flex flex-col sm:flex-row gap-6 items-center justify-center"
                     >
-                    </div>
+
+                        {/* WhatsApp Community Button */}
+                        <a
+                            href="https://chat.whatsapp.com/FO8HW11MbK95iZp6pNnhDi?mode=r_c"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Button
+                                variant="outline"
+                                className="rounded-2xl px-8 py-6 text-lg font-semibold backdrop-blur-md 
+                                bg-white/80 hover:bg-white dark:bg-black/80 dark:hover:bg-black 
+                                text-black dark:text-white transition-all duration-300 
+                                hover:-translate-y-0.5 border-2 border-black/20 dark:border-white/20
+                                hover:border-green-500 dark:hover:border-green-400 shadow-lg hover:shadow-xl
+                                dark:hover:shadow-neutral-800/50 min-w-[180px] hover:text-green-600 dark:hover:text-green-400"
+                            >
+                                <span className="opacity-90 hover:opacity-100 transition-opacity">
+                                    Join WhatsApp Community
+                                </span>
+                                <span className="ml-3 text-xl">💬</span>
+                            </Button>
+                        </a>
+                    </motion.div>
                 </motion.div>
             </div>
         </div>
