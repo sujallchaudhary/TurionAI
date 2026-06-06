@@ -59,7 +59,7 @@ export function BackgroundPaths({
     const words = title.split(" ");
 
     return (
-        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-white dark:bg-neutral-950">
+        <div className="relative min-h-screen w-full flex items-center justify-center overflow-x-hidden bg-white dark:bg-neutral-950">
             {/* Theme Selector */}
             <div className="absolute top-4 right-4 z-20">
                 <ThemeSelector />
